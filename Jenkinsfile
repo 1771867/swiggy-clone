@@ -39,7 +39,8 @@ pipeline{
          }
          stage('Azure Login') {
             when {
-                branch 'master'
+                branch 'main'
+            }
             steps {
                 script {
                     // Login to Azure using the Service Principal
