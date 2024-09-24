@@ -52,6 +52,9 @@ pipeline{
         }
 
         stage('Get AKS Credentials') {
+            when {
+                branch 'main'
+            }
             steps {
                 script {
                     // Get the AKS cluster credentials to configure kubectl
@@ -63,6 +66,9 @@ pipeline{
         }
 
         stage('Deploy to Kubernets'){
+            when {
+                branch 'main'
+            }
              steps{
                  script{
                      dir('Kubernetes') {
